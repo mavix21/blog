@@ -5,6 +5,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 export async function GET(context) {
   const posts = await getCollection("blog");
+  if (!context.site) {
+    throw new Error("site is not defined in astro.config");
+  }
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
