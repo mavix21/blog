@@ -20,7 +20,7 @@ export default defineConfig({
       {
         provider: fontProviders.google(),
         name: "Geist",
-        cssVariable: "--font-geist",
+        cssVariable: "--font-geist-sans",
       },
     ],
   },
