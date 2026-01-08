@@ -1,6 +1,6 @@
 // @ts-check
 
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -12,5 +12,15 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: "Geist",
+        cssVariable: "--font-geist",
+      },
+    ],
   },
 });
