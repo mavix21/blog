@@ -1,0 +1,52 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import { cn } from "@/lib/utils";
+
+interface Props {
+  src: ImageMetadata | string;
+  alt: string;
+  size?: "default" | "sm" | "lg" | "xl" | "2xl";
+  rounded?: boolean;
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  size = "default",
+  rounded = true,
+  class: className,
+} = Astro.props;
+
+const sizeClasses = {
+  sm: "size-6",
+  default: "size-8",
+  lg: "size-10",
+  xl: "size-12",
+  "2xl": "size-16",
+};
+
+const containerClass = cn(
+  "relative flex shrink-0 select-none",
+  rounded ? "rounded-full" : "rounded-md",
+  sizeClasses[size],
+  className,
+);
+
+const imageClass = cn(
+  "aspect-square size-full object-cover grayscale transition-[filter] duration-300 ease-in hover:grayscale-0",
+  rounded ? "rounded-full" : "rounded-md",
+);
+---
+
+<div class={containerClass}>
+  {
+    typeof src === "string" ? (
+      <img src={src} alt={alt} class={imageClass} />
+    ) : (
+      <Image priority src={src} alt={alt} class={imageClass} />
+    )
+  }
+</div>
