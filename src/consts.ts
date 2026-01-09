@@ -15,3 +15,14 @@ export const SITE: Site = {
   featuredPostCount: 3,
   postsPerPage: 6,
 };
+
+export const NAV_LINKS = [
+  {
+    href: "/blog",
+    label: "Blog",
+  },
+  {
+    href: "/about",
+    label: "About",
+  },
+] as const;
