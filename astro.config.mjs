@@ -21,6 +21,8 @@ export default defineConfig({
         provider: fontProviders.google(),
         name: "Geist",
         cssVariable: "--font-geist-sans",
+        subsets: ["latin"],
+        weights: [300, 400, 500, 600, 700],
       },
     ],
   },
