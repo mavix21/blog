@@ -29,6 +29,9 @@ importers:
       '@hugeicons/react':
         specifier: ^1.1.4
         version: 1.1.4(react@19.2.3)
+      '@iconify-json/lucide':
+        specifier: ^1.2.83
+        version: 1.2.83
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.1.18(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2))
@@ -539,6 +542,9 @@ packages:
         optional: true
       prettier-plugin-ember-template-tag:
         optional: true
+
+  '@iconify-json/lucide@1.2.83':
+    resolution: {integrity: sha512-k/255BFdcE+gY8cwQOlJMKjxOScW++8tiMxWw8jJXqHoQhBmOgsxm8SHVUIZqSrquMCcSNJn6rx67ZTQhoR2cA==}
 
   '@iconify/tools@4.2.0':
     resolution: {integrity: sha512-WRxPva/ipxYkqZd1+CkEAQmd86dQmrwH0vwK89gmp2Kh2WyyVw57XbPng0NehP3x4V1LzLsXUneP1uMfTMZmUA==}
@@ -3941,6 +3947,10 @@ snapshots:
       semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
+
+  '@iconify-json/lucide@1.2.83':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/tools@4.2.0':
     dependencies:
