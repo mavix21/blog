@@ -1,5 +1,7 @@
 ---
 import BaseHead from "@/components/BaseHead.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
 
 interface Props {
   title?: string;
@@ -16,8 +18,14 @@ const { title, fullTitle, description } = Astro.props;
     <slot name="head" />
   </BaseHead>
   <body class="font-sans antialiased" transition:persist>
-    <main>
-      <slot />
-    </main>
+    <div
+      class="mx-auto grid min-h-svh max-w-lg grid-rows-[auto_1fr_auto] px-4 py-16 lg:max-w-xl"
+    >
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
