@@ -4,6 +4,7 @@
 import "../styles/global.css";
 
 import type { ImageMetadata } from "astro";
+import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 
 import FallbackImage from "../assets/blog-placeholder-1.jpg";
@@ -41,21 +42,7 @@ const {
   />
   <meta name="generator" content={Astro.generator} />
 
-  <!-- Font preloads -->
-  <link
-    rel="preload"
-    href="/fonts/atkinson-regular.woff"
-    as="font"
-    type="font/woff"
-    crossorigin
-  />
-  <link
-    rel="preload"
-    href="/fonts/atkinson-bold.woff"
-    as="font"
-    type="font/woff"
-    crossorigin
-  />
+  <Font cssVariable="--font-geist-sans" preload />
 
   <!-- Canonical URL -->
   <link rel="canonical" href={canonicalURL} />
